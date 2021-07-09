@@ -16,6 +16,7 @@ namespace LinkedList
                 Console.WriteLine("Enter 4 to Add data in between of two nodes in Linked List");
                 Console.WriteLine("Enter 5 to Delete first data of Linked List");
                 Console.WriteLine("Enter 6 to Delete Last data of Linked List");
+                Console.WriteLine("Enter 7 to Search data from Linked List");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -58,6 +59,11 @@ namespace LinkedList
                         linkedList.Display();
                         break;
                     case 7:
+                        Console.WriteLine("Enter the element to found");
+                        int target = Convert.ToInt32(Console.ReadLine());
+                        linkedList.Search(target);
+                        break;
+                    case 8:
                         return;
                 }
             }

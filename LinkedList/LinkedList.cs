@@ -115,6 +115,23 @@ namespace LinkedList
             newnode.next = null;
             return this.head;
         }
+        public void Search(int data)
+        {
+            int flag = 0;
+
+            Node temp = this.head;
+            while (temp != null)
+            {
+                if(temp.data == data)
+                {
+                    flag = 1;
+                }
+                
+                temp = temp.next;
+            }
+            Console.WriteLine( flag == 1? "Found! "+data: "Not Found");
+           
+        }
             public void Display()
         {
           
