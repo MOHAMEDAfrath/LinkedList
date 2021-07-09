@@ -19,6 +19,9 @@ namespace LinkedList
                 Console.WriteLine("Enter 7 to Search data from Linked List");
                 Console.WriteLine("Enter 8 to Add node at specified position from Linked List");
                 Console.WriteLine("Enter 9 to Delete specified node from Linked List");
+                Console.WriteLine("Enter 10 to print size of Linked List");
+                Console.WriteLine("Enter 11 to Sort Ascending Linked List");
+                Console.WriteLine("Enter 12 to exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -84,6 +87,17 @@ namespace LinkedList
                         Console.WriteLine("The length of linked list is {0}",linkedList.Size());
                         break;
                     case 11:
+                        linkedList.InsertAtLast(56);
+                        linkedList.InsertAtLast(30);
+                        linkedList.InsertAtLast(40);
+                        linkedList.InsertAtLast(70);
+                        Console.WriteLine("After insertion");
+                        linkedList.Display();
+                        Console.WriteLine("Sorted :");
+                        linkedList.Sort();
+                        linkedList.Display();
+                        break;
+                    case 12:
                         return;
                 }
             }

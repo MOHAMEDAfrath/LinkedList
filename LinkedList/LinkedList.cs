@@ -10,6 +10,10 @@ namespace LinkedList
     {
         int count = 0;
         public Node head;
+        /// <summary>
+        /// Insert at last
+        /// </summary>
+     
         public void InsertAtLast(int data)
         {
             Node newnode = new Node(data);
@@ -26,6 +30,7 @@ namespace LinkedList
             }
 
         }
+        //Finds the last element
         public Node GetLastNode()
         {
             Node temp = this.head;
@@ -35,6 +40,7 @@ namespace LinkedList
             }
             return temp;
         }
+        //Add the element to first
         public void AddFirst(int data)
         {
             Node newnode = new Node(data);
@@ -50,6 +56,7 @@ namespace LinkedList
                 head = newnode;
             }
         }
+        //Inserts at middle
         public void InsertAtMiddle(int data)
         {
             Node newnode = new Node(data);
@@ -89,6 +96,7 @@ namespace LinkedList
 
 
         }
+        //Deletes first
         public Node DeleteFirst()
         {
             if(this.head == null)
@@ -100,6 +108,10 @@ namespace LinkedList
             this.head = this.head.next;
             return this.head;
         }
+        /// <summary>
+        /// Deletes last
+        /// </summary>
+        /// <returns></returns>
         public Node DeleteLast()
         {
             if(this.head == null)
@@ -121,6 +133,7 @@ namespace LinkedList
             count--;
             return this.head;
         }
+        //Search node
         public string Search(int data)
         {
             int flag = 0;
@@ -138,6 +151,7 @@ namespace LinkedList
             return (flag == 1? "Found! "+data: "Not Found");
            
         }
+        //Inserts at specified location
         public Node InsertAtSpecificPosition(int key,int data)
         {
             Node newnode = new Node(data);
@@ -162,6 +176,7 @@ namespace LinkedList
             return this.head;
             
         }
+        //Deletes the given node
         public Node DeleteGivenNode(int data)
         {
             Node temp = this.head;
@@ -189,10 +204,31 @@ namespace LinkedList
             Size();
 
         }
+        //Sorts the element
+        public void Sort()
+        {
+            Node temp = this.head;
+            for(;temp!=null;temp= temp.next)
+            {
+                for(Node cur = temp.next; cur != null; cur = cur.next)
+                {
+                    if (temp.data > cur.data)
+                    {
+                        int temporary = temp.data;
+                        temp.data = cur.data;
+                        cur.data = temporary;
+                    }
+                }
+
+            }
+
+        }
+        //returns the size
         public int Size()
         {
             return count;
         }
+        //Size is returned
             public void Display()
         {
           
