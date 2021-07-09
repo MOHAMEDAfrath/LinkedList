@@ -65,6 +65,14 @@ namespace LinkedList
                         Console.WriteLine(result);
                         break;
                     case 8:
+                        Console.WriteLine("Insert after node:");
+                        int key = Convert.ToInt32(Console.ReadLine());
+                        linkedList.InsertAtSpecificPosition(key, 40);
+                        linkedList.Display();
+                        break;
+                          
+
+                    case 9:
                         return;
                 }
             }

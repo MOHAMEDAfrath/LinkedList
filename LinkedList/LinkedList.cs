@@ -132,6 +132,30 @@ namespace LinkedList
             return (flag == 1? "Found! "+data: "Not Found");
            
         }
+        public Node InsertAtSpecificPosition(int key,int data)
+        {
+            Node newnode = new Node(data);
+            Node temp = this.head;
+            Node current = null;
+            while (temp != null)
+            {
+                if(temp.data == key)
+                {
+                    current = temp;
+                      temp = temp.next;
+                    break;
+                   
+                }
+                temp = temp.next;
+              
+                
+            }
+            
+            current.next = newnode;
+            newnode.next = temp;
+            return this.head;
+            
+        }
             public void Display()
         {
           
