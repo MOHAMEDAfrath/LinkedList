@@ -97,6 +97,24 @@ namespace LinkedList
             this.head = this.head.next;
             return this.head;
         }
+        public Node DeleteLast()
+        {
+            if(this.head == null)
+            {
+                return null;
+            }
+            if(this.head.next == null)
+            {
+                return null;
+            }
+            Node newnode = this.head;
+            while (newnode.next.next != null)
+            {
+                newnode = newnode.next;
+            }
+            newnode.next = null;
+            return this.head;
+        }
             public void Display()
         {
           
