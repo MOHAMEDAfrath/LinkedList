@@ -32,13 +32,26 @@ namespace LinkedList
             }
             return temp;
         }
+        public void AddFirst(int data)
+        {
+            Node newnode = new Node(data);
+            if(this.head == null)
+            {
+                this.head = newnode;
+            }
+            else
+            {
+                newnode.next = head;
+                head = newnode;
+            }
+        }
         public void Display()
         {
           
             Node temp = this.head;
             while (temp != null)
             {
-                Console.WriteLine("Element of Linked List: {0} ", temp.data);
+                Console.Write("{0}->", temp.data);
                 temp = temp.next;
                
             }
