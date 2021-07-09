@@ -2,12 +2,12 @@
 
 namespace LinkedList
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Linked List Program!");
-            LinkedList linkedList = new LinkedList();
+            LinkedListOperations linkedList = new LinkedListOperations();
             while (true)
             {
                 Console.WriteLine("Enter 1 to Add at Last");
@@ -61,7 +61,8 @@ namespace LinkedList
                     case 7:
                         Console.WriteLine("Enter the element to found");
                         int target = Convert.ToInt32(Console.ReadLine());
-                        linkedList.Search(target);
+                        var result = linkedList.Search(target);
+                        Console.WriteLine(result);
                         break;
                     case 8:
                         return;

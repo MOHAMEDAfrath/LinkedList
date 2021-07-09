@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    class LinkedList
+    public class LinkedListOperations
     {
         int count = 0;
         public Node head;
@@ -115,7 +115,7 @@ namespace LinkedList
             newnode.next = null;
             return this.head;
         }
-        public void Search(int data)
+        public string Search(int data)
         {
             int flag = 0;
 
@@ -129,7 +129,7 @@ namespace LinkedList
                 
                 temp = temp.next;
             }
-            Console.WriteLine( flag == 1? "Found! "+data: "Not Found");
+            return (flag == 1? "Found! "+data: "Not Found");
            
         }
             public void Display()
