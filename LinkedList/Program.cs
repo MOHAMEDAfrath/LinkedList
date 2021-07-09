@@ -8,6 +8,7 @@ namespace LinkedList
         {
             Console.WriteLine("Welcome to Linked List Program!");
             LinkedListOperations linkedList = new LinkedListOperations();
+            //options to perform operations
             while (true)
             {
                 Console.WriteLine("Enter 1 to Add at Last");
