@@ -8,16 +8,19 @@ namespace LinkedList
 {
     class LinkedList
     {
+        int count = 0;
         public Node head;
         public void InsertAtLast(int data)
         {
             Node newnode = new Node(data);
             if(head == null)
             {
+                count++;
                 this.head = newnode;
             }
             else
             {
+                count++;
                 Node lastNode = GetLastNode();
                 lastNode.next = newnode;
             }
@@ -37,15 +40,55 @@ namespace LinkedList
             Node newnode = new Node(data);
             if(this.head == null)
             {
+                count++;
                 this.head = newnode;
             }
             else
             {
+                count++;
                 newnode.next = head;
                 head = newnode;
             }
         }
-        public void Display()
+        public void InsertAtMiddle(int data)
+        {
+            Node newnode = new Node(data);
+            if (this.head == null)
+            {
+                count++;
+                this.head = newnode;
+            }
+            else
+            {
+                int middle = 0;
+                if (count % 2 == 0)
+                {
+                    middle = count / 2;
+
+                }
+                else
+                {
+                    middle = (count + 1) / 2;
+                }
+                    
+                    Node temp = this.head;
+                    Node current=null;
+                    for (int i = 0; i < middle; i++)
+                    {
+                        current = temp;
+                        temp = temp.next;
+                    }
+                    current.next = newnode;
+                    current = newnode;
+                    newnode.next = temp;
+                
+
+
+            }
+
+
+        }
+            public void Display()
         {
           
             Node temp = this.head;
@@ -55,6 +98,7 @@ namespace LinkedList
                 temp = temp.next;
                
             }
+            Console.WriteLine(" ");
         }
     }
 }

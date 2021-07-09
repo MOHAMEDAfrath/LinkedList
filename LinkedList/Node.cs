@@ -14,6 +14,7 @@ namespace LinkedList
         {
             this.data = data;
             this.next = null;
+            
         }
     }
 }
