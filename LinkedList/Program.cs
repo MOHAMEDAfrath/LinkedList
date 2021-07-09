@@ -12,13 +12,15 @@ namespace LinkedList
             {
                 Console.WriteLine("Enter 1 to Add at Last");
                 Console.WriteLine("Enter 2 to Add at First");
-                Console.WriteLine("Enter 3 to Append date to Linked List");
+                Console.WriteLine("Enter 3 to Append data to Linked List");
+                Console.WriteLine("Enter 4 to Add data in between of two nodes in Linked List");
+                Console.WriteLine("Enter 5 to Delete first data of Linked List");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 1:
                         linkedList.InsertAtLast(56);
-                        //linkedList.InsertAtLast(30);
+                        linkedList.InsertAtLast(30);
                         linkedList.InsertAtLast(70);
                         Console.WriteLine("Elements are inserted at last");
                         linkedList.Display();
@@ -45,6 +47,11 @@ namespace LinkedList
                         linkedList.Display();
                         break;
                     case 5:
+                        Console.WriteLine("After deletion of first node :");
+                        linkedList.DeleteFirst();
+                        linkedList.Display();
+                        break;
+                    case 6:
                         return;
                 }
             }
