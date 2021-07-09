@@ -78,6 +78,7 @@ namespace LinkedList
                         current = temp;
                         temp = temp.next;
                     }
+                count++;
                     current.next = newnode;
                     current = newnode;
                     newnode.next = temp;
@@ -92,8 +93,10 @@ namespace LinkedList
         {
             if(this.head == null)
             {
+                count--;
                 return null;
             }
+            count--;
             this.head = this.head.next;
             return this.head;
         }
@@ -101,10 +104,12 @@ namespace LinkedList
         {
             if(this.head == null)
             {
+                count--;
                 return null;
             }
             if(this.head.next == null)
             {
+                count--;
                 return null;
             }
             Node newnode = this.head;
@@ -113,6 +118,7 @@ namespace LinkedList
                 newnode = newnode.next;
             }
             newnode.next = null;
+            count--;
             return this.head;
         }
         public string Search(int data)
@@ -150,11 +156,42 @@ namespace LinkedList
               
                 
             }
-            
+            count++;
             current.next = newnode;
             newnode.next = temp;
             return this.head;
             
+        }
+        public Node DeleteGivenNode(int data)
+        {
+            Node temp = this.head;
+            Node current = null;
+            if (temp.data == data)
+            {
+                count--;
+                this.head = temp.next;
+            }
+            else
+            {
+                while (temp != null)
+                {
+                    if (temp.data == data)
+                    {
+                        count--;
+                        current.next = temp.next;
+                        break;
+                    }
+                    current = temp;
+                    temp = temp.next;
+                }
+            }
+            return this.head;
+            Size();
+
+        }
+        public int Size()
+        {
+            return count;
         }
             public void Display()
         {

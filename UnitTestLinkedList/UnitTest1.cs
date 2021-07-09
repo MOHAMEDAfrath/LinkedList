@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLinkedList
 {
-    
+
     [TestClass]
     public class UnitTest1
     {
@@ -12,9 +12,9 @@ namespace UnitTestLinkedList
         public void SetUp()
         {
             lk = new LinkedListOperations();
-            
+
         }
-        
+
         [TestMethod]
         public void TestSearchMethod()
         {
@@ -32,19 +32,47 @@ namespace UnitTestLinkedList
             lk.InsertAtLast(40);
             lk.InsertAtLast(30);
             lk.InsertAtLast(70);
-            int data = 40,key = 70;
+            int data = 40, key = 70;
             bool expected = true;
             bool actual = false;
             Node temp = lk.InsertAtSpecificPosition(key, data);
             while (temp != null)
             {
-                if(temp.data == key && temp.next.data == data)
+                if (temp.data == key && temp.next.data == data)
                 {
                     actual = true;
                 }
                 temp = temp.next;
             }
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void DeleteSpecifiedNode()
+        {
+            lk.InsertAtLast(40);
+            lk.InsertAtLast(30);
+            lk.InsertAtLast(70);
+            int data = 30;
+            int size = lk.Size();
+            Node temp = lk.DeleteGivenNode(data);
+            int sizeafterdeletion = lk.Size();
+            bool actual = false;
+            bool expected = true;
+            while (temp != null)
+            {
+                if ((temp.data == data) || (sizeafterdeletion == (size - 1)))
+                {
+                    actual = true;
+
+                }
+                else
+                {
+                    actual = false;
+                }
+                temp = temp.next;
+            }
+            Assert.AreEqual(expected, actual);
+
         }
     }
 }

@@ -17,6 +17,8 @@ namespace LinkedList
                 Console.WriteLine("Enter 5 to Delete first data of Linked List");
                 Console.WriteLine("Enter 6 to Delete Last data of Linked List");
                 Console.WriteLine("Enter 7 to Search data from Linked List");
+                Console.WriteLine("Enter 8 to Add node at specified position from Linked List");
+                Console.WriteLine("Enter 9 to Delete specified node from Linked List");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -68,11 +70,20 @@ namespace LinkedList
                         Console.WriteLine("Insert after node:");
                         int key = Convert.ToInt32(Console.ReadLine());
                         linkedList.InsertAtSpecificPosition(key, 40);
+                        Console.WriteLine("After insertion");
                         linkedList.Display();
                         break;
-                          
-
                     case 9:
+                        Console.WriteLine("The node to be deleted:");
+                        key = Convert.ToInt32(Console.ReadLine());
+                        linkedList.DeleteGivenNode(key);
+                        Console.WriteLine("After Deletion");
+                        linkedList.Display();
+                        break;
+                    case 10:
+                        Console.WriteLine("The length of linked list is {0}",linkedList.Size());
+                        break;
+                    case 11:
                         return;
                 }
             }
